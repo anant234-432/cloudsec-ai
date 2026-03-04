@@ -2,28 +2,21 @@ from sqlalchemy.orm import Session
 from app.models.log import Log
 from app.services.anomaly_service import detect_anomaly
 from datetime import datetime,timezone
+from app.services.ai_service import score_log_message
 
 
-def create_log(db: Session, message: str, level: str):
-# Create raw log
+def create_log(db: Session, message: str, level: str)-> Log:
+    scored = score_log_message(message)
+
     new_log = Log(
         message=message,
         level=level,
-        created_at=datetime.now(timezone.utc)
+        anomaly_score=scored["anomaly_score"],
+        is_anomaly=scored["is_anomaly"],
+        explanation=scored["explanation"],
     )
 
     db.add(new_log)
     db.commit()
     db.refresh(new_log)
-
-# Run anomaly detection
-    result = detect_anomaly(message)
-
-# Update log with anomaly results
-    new_log.anomaly_score = result["score"]
-    new_log.is_anomaly = result["is_anomaly"]
-
-    db.commit()
-    db.refresh(new_log)
-
     return new_log
