@@ -52,8 +52,6 @@ It performs:
 4. Persistent scoring  
 5. (Upcoming) LLM-based explanation of anomalies  
 
-This is designed as a portfolio-level system showcasing backend architecture and AI integration.
-
 ---
 
 ## 🏗️ Architecture
