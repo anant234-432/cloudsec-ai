@@ -177,7 +177,7 @@ This ensures consistent environments across development and production.
 
 ---
 
-### 🔹 AWS Architecture (Planned / Production-Ready Design)
+### 🔹 AWS Architecture (Planned Design)
 
 Backend → AWS ECS (Fargate)  
 Database → AWS RDS (PostgreSQL)  
