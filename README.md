@@ -101,6 +101,14 @@ app/
 
 ---
 
+## Current Frontend Features (Not Implemented)
+
+---
+
+## Current Cloud and Devops Features (Not Implemented)
+
+---
+
 ## 📜 Log Intelligence Pipeline
 
 When a log is submitted:
