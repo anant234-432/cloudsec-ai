@@ -2,7 +2,7 @@ from time import timezone
 
 from sqlalchemy import Column, DateTime, Integer, String, Float
 from app.database import Base
-from datetime import datetime, timezone
+from datetime import datetime
 
 class Log(Base):
     __tablename__= "logs"

@@ -1,7 +1,5 @@
 from sqlalchemy.orm import Session
 from app.models.log import Log
-from app.services.anomaly_service import detect_anomaly
-from datetime import datetime,timezone
 from app.services.ai_service import score_log_message
 
 

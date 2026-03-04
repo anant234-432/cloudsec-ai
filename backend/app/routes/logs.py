@@ -1,14 +1,11 @@
 from typing import Optional
 from fastapi import APIRouter, Depends, Query, HTTPException
-from httpx import get
 from sqlalchemy.orm import Session
 from app.database import SessionLocal
 from app.models.log import Log
 from app.schemas.log import LogCreate
 from app.routes.auth import get_current_user
 from app.services.logs_service import create_log
-from app.database import SessionLocal
-from typing import Optional
 
 router = APIRouter(prefix="/logs", tags=["logs"])
 
