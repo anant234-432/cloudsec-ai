@@ -1,9 +1,5 @@
 from fastapi import FastAPI
 from app.routes import auth, logs, ai
-from app.database import engine
-from app.database import Base
-
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
